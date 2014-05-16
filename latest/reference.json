@@ -1934,6 +1934,24 @@
             }
         },
         "group": {
+            "style-name": {
+                "css": "group-name",
+                "type": "string",
+                "required": false,
+                "default-value": "",
+                "serialization": "rules",
+                "tag-name": "GroupRule",
+                "doc": "Name to be used for matching style definitions to the group symbolizer."
+            },
+            "style-class": {
+                "css": "group-class",
+                "type": "string",
+                "required": false,
+                "default-value": "",
+                "serialization": "rules",
+                "tag-name": "GroupRule",
+                "doc": "Class names, seperated by spaces, to be used for matching style definitions to the group symbolizer."
+            },
             "start-column": {
                 "css": "group-start-column",
                 "doc": "Starting index for indexed column names.",
