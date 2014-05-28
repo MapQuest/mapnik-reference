@@ -1952,6 +1952,13 @@
                 "tag-name": "GroupRule",
                 "doc": "Class names, seperated by spaces, to be used for matching style definitions to the group symbolizer."
             },
+            "layout": {
+                "css": "group-layout",
+                "required": true,
+                "type": "tags",
+                "serialization": "tag",
+                "doc": "Layout definition for the group."
+            },
             "start-column": {
                 "css": "group-start-column",
                 "doc": "Starting index for indexed column names.",
