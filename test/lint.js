@@ -14,6 +14,7 @@ var lint_ref = function(ver) {
     for (var symbolizer in symbolizers) {
         if (symbolizer === 'colors') continue;
         for (var prop in symbolizers[symbolizer]) {
+            if (prop === 'child-elements') continue;
             if (!symbolizers[symbolizer][prop].doc) {
                 if (symbolizer !== cursim) {
                     cursim = symbolizer;
@@ -35,6 +36,7 @@ var lint_ref = function(ver) {
     for (var symbolizer in symbolizers) {
         if (symbolizer === 'colors') continue;
         for (var prop in symbolizers[symbolizer]) {
+            if (prop === 'child-elements') continue;
             if (symbolizers[symbolizer][prop]['default-value'] === undefined) {
                 if (symbolizer !== cursim) {
                     cursim = symbolizer;
