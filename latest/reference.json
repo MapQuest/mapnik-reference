@@ -905,6 +905,10 @@
             }
         },
         "shield": {
+            "child-elements": [
+                "format",
+                "layout"
+            ],
             "name": {
                 "css": "shield-name",
                 "type": "expression",
@@ -1634,6 +1638,10 @@
             }
         },
         "text": {
+            "child-elements": [
+                "format",
+                "layout"
+            ],
             "name": {
                 "css": "text-name",
                 "type": "expression",
@@ -1946,6 +1954,162 @@
             }
         }
 
+    },
+    "elements": {
+        "format": {
+            "child-elements": [
+                "format",
+                "layout"
+            ],
+            "pseudo": {
+                "before": {
+                    "behavior": "prepend",
+                    "indexed": true
+                },
+                "after": {
+                    "behavior": "append",
+                    "indexed": true
+                }
+            },
+            "content": {
+                "css": "content",
+                "type": "expression",
+                "default-value": "",
+                "serialization": "content",
+                "doc": "Value to use for a text label. Data columns are specified using brackets like [column_name]"
+            },
+            "face-name": {
+                "css": "face-name",
+                "type": "string",
+                "validate": "font",
+                "doc": "Font name and style to render a label in"
+            },
+            "size": {
+                "css": "size",
+                "type": "float",
+                "doc": "Text size in pixels"
+            },
+            "fill": {
+                "css": "fill",
+                "doc": "Specifies the color for the text",
+                "type": "color"
+            },
+            "halo-fill": {
+                "css": "halo-fill",
+                "type": "color",
+                "doc": "Specifies the color of the halo around the text."
+            },
+            "halo-radius": {
+                "css": "halo-radius",
+                "doc": "Specify the radius of the halo in pixels",
+                "type": "float"
+            },
+            "character-spacing": {
+                "css": "character-spacing",
+                "type": "float",
+                "doc": "Horizontal spacing adjustment between characters in pixels"
+            },
+            "line-spacing": {
+                "css": "line-spacing",
+                "type": "unsigned",
+                "doc": "Vertical spacing adjustment between lines in pixels"
+            },
+            "wrap-character": {
+                "css": "wrap-character",
+                "type": "string",
+                "doc": "Use this character instead of a space to wrap long text."
+            },
+            "text-transform": {
+                "css": "transform",
+                "type": [
+                    "none",
+                    "uppercase",
+                    "lowercase",
+                    "capitalize"
+                ],
+                "doc": "Transform the case of the characters"
+            }
+        },
+        "layout": {
+            "child-elements": [
+                "format",
+                "layout"
+            ],
+            "pseudo": {
+                "layout": {
+                    "indexed": true,
+                    "behavior": "append"
+                }
+            },
+            "content": {
+                "css": "content",
+                "type": "expression",
+                "default-value": "",
+                "serialization": "content",
+                "doc": "Value to use for a text label. Data columns are specified using brackets like [column_name]"
+            },
+            "dx": {
+                "css": "dx",
+                "type": "float",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the X axis.  With \"dummy\" placement-type, a positive value displaces to the right. With \"simple\" placement-type, it is either left, right or unchanged, depending on the placement selected. Any non-zero value implies \"horizontal-alignment\" changes to \"left\" by default. Has no effect with 'line' text-placement-type."
+            },
+            "dy": {
+                "css": "dy",
+                "type": "float",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  With \"dummy\" placement-type, a positive value displaces downwards. With \"simple\" placement-type, it is either up, down or unchanged, depending on the placement selected. With \"line\" placement-type, a positive value displaces below the path."
+            },
+            "vertical-alignment": {
+                "css": "vertical-alignment",
+                "type": [
+                  "top",
+                  "middle",
+                  "bottom",
+                  "auto"
+                ],
+                "doc": "Position of label relative to point position."
+            },
+            "horizontal-alignment": {
+                "css": "horizontal-alignment",
+                "type": [
+                    "left",
+                    "middle",
+                    "right",
+                    "auto"
+                ],
+                "doc": "The text's horizontal alignment from its centerpoint"
+            },
+            "justify-alignment": {
+                "css": "align",
+                "type": [
+                    "left",
+                    "right",
+                    "center",
+                    "auto"
+                ],
+                "doc": "Define how text is justified"
+            },
+            "text-ratio": {
+                "css": "text-ratio",
+                "doc": "Define the amount of text (of the total) present on successive lines when wrapping occurs",
+                "type": "unsigned"
+            },
+            "wrap-width": {
+                "css": "wrap-width",
+                "doc": "Length of a chunk of text in characters before wrapping text",
+                "default-value": 0,
+                "type": "unsigned"
+            },
+            "wrap-before": {
+                "css": "wrap-before",
+                "type": "boolean",
+                "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
+            },
+            "orientation": {
+                "css": "orientation",
+                "type": "expression",
+                "doc": "Rotate the text."
+            }
+        }
     },
     "colors": {
         "aliceblue":  [240, 248, 255],
